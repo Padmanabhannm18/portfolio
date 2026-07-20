@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padmanabhan N M | AI/ML Engineer</title>
+<style>
+  :root{
+    --bg:#0b0e14;
+    --bg-alt:#11151f;
+    --card:#161b26;
+    --border:#232938;
+    --text:#e6e9ef;
+    --text-dim:#9aa4b8;
+    --accent:#5eead4;
+    --accent-2:#818cf8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+    line-height:1.6;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .container{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(11,14,20,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav .container{display:flex;justify-content:space-between;align-items:center;height:64px;}
+  .brand{font-weight:700;letter-spacing:0.5px;color:var(--text);font-size:1.05rem;}
+  .brand span{color:var(--accent);}
+  .navlinks{display:flex;gap:28px;}
+  .navlinks a{color:var(--text-dim);font-size:0.92rem;font-weight:500;}
+  .navlinks a:hover{color:var(--accent);text-decoration:none;}
+
+  /* HERO */
+  header.hero{
+    padding:96px 0 72px;
+    background:radial-gradient(circle at 20% 20%, rgba(94,234,212,0.08), transparent 40%),
+               radial-gradient(circle at 80% 0%, rgba(129,140,248,0.10), transparent 45%);
+  }
+  .eyebrow{
+    color:var(--accent);
+    font-size:0.85rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  h1{
+    font-size:3rem;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:14px;
+    letter-spacing:-1px;
+  }
+  .role{
+    font-size:1.35rem;
+    color:var(--text-dim);
+    font-weight:500;
+    margin-bottom:22px;
+  }
+  .role .accent{color:var(--accent-2);}
+  .lead{max-width:640px;color:var(--text-dim);font-size:1.02rem;margin-bottom:32px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:8px;
+    font-weight:600;font-size:0.92rem;
+    border:1px solid var(--border);
+    transition:all 0.2s ease;
+  }
+  .btn-primary{background:var(--accent);color:#0b0e14;border-color:var(--accent);}
+  .btn-primary:hover{background:#4dd8c9;text-decoration:none;}
+  .btn-outline{color:var(--text);}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+  .contact-strip{display:flex;flex-wrap:wrap;gap:22px;color:var(--text-dim);font-size:0.9rem;}
+  .contact-strip span{display:flex;align-items:center;gap:6px;}
+
+  /* SECTIONS */
+  section{padding:72px 0;border-top:1px solid var(--border);}
+  .section-tag{
+    color:var(--accent);
+    font-size:0.8rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .section-title{font-size:1.9rem;font-weight:800;margin-bottom:36px;letter-spacing:-0.5px;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;}
+  .about-text p{color:var(--text-dim);margin-bottom:16px;}
+  .stat-card{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:20px;text-align:center;
+  }
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .stat-num{font-size:1.7rem;font-weight:800;color:var(--accent);}
+  .stat-label{font-size:0.8rem;color:var(--text-dim);margin-top:4px;}
+
+  /* EXPERIENCE */
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{
+    content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(var(--accent), var(--accent-2));
+    opacity:0.35;
+  }
+  .tl-item{position:relative;margin-bottom:40px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:'';position:absolute;left:-28px;top:6px;width:12px;height:12px;
+    border-radius:50%;background:var(--accent);border:3px solid var(--bg);
+    box-shadow:0 0 0 2px var(--accent);
+  }
+  .tl-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;}
+  .tl-role{font-size:1.1rem;font-weight:700;color:var(--text);}
+  .tl-company{color:var(--accent-2);font-weight:600;font-size:0.95rem;}
+  .tl-meta{color:var(--text-dim);font-size:0.85rem;white-space:nowrap;}
+  .tl-item ul{margin:10px 0 0 20px;color:var(--text-dim);font-size:0.93rem;}
+  .tl-item li{margin-bottom:6px;}
+
+  /* PROJECTS */
+  .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .project-card{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:24px;transition:transform 0.2s ease, border-color 0.2s ease;
+  }
+  .project-card:hover{transform:translateY(-3px);border-color:var(--accent);}
+  .project-card h3{font-size:1.08rem;margin-bottom:10px;color:var(--text);}
+  .project-card p{color:var(--text-dim);font-size:0.9rem;}
+  .project-tag{
+    display:inline-block;margin-top:14px;font-size:0.75rem;color:var(--accent);
+    border:1px solid var(--border);padding:3px 10px;border-radius:20px;
+  }
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .skill-cat-title{font-weight:700;margin-bottom:14px;color:var(--text);font-size:1rem;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .pill{
+    background:var(--bg-alt);border:1px solid var(--border);
+    padding:7px 14px;border-radius:20px;font-size:0.85rem;color:var(--text-dim);
+  }
+
+  /* EDUCATION & CERTS */
+  .edu-cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;}
+  .card h3{font-size:1.02rem;margin-bottom:6px;}
+  .card .meta{color:var(--text-dim);font-size:0.85rem;margin-bottom:12px;}
+  .cert-list{list-style:none;color:var(--text-dim);font-size:0.9rem;}
+  .cert-list li{padding:8px 0;border-bottom:1px solid var(--border);}
+  .cert-list li:last-child{border-bottom:none;}
+
+  /* CONTACT / FOOTER */
+  footer{padding:60px 0 40px;text-align:center;border-top:1px solid var(--border);}
+  footer h2{font-size:1.8rem;margin-bottom:14px;}
+  footer p{color:var(--text-dim);margin-bottom:28px;}
+  .footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:28px;}
+  .copyright{color:var(--text-dim);font-size:0.8rem;}
+
+  @media(max-width:800px){
+    .about-grid, .project-grid, .skills-grid, .edu-cert-grid{grid-template-columns:1fr;}
+    h1{font-size:2.2rem;}
+    .navlinks{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="brand">PADMANABHAN <span>N M</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">AI / ML Engineer</div>
+    <h1>Padmanabhan N M</h1>
+    <div class="role">Building intelligent systems with <span class="accent">Python, ML &amp; automation</span></div>
+    <p class="lead">AI/ML Engineer with strong Python expertise, experienced in building and deploying machine learning solutions for predictive analytics and data-driven systems. Also skilled in backend development and RPA using UiPath Studio and Playwright to deliver scalable, efficient applications.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="mailto:padmanabhannm18@gmail.com">Get In Touch</a>
+      <a class="btn btn-outline" href="https://github.com/Padmanabhannm18" target="_blank" rel="noopener">View GitHub</a>
+    </div>
+    <div class="contact-strip">
+      <span>📍 Kerala, India</span>
+      <span>✉️ padmanabhannm18@gmail.com</span>
+      <span>📞 +91 6282629959</span>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-tag">About</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm an AI/ML Engineer based in Kerala, India, currently working on AI-driven solutions for vessel performance optimization and operational efficiency. My background spans predictive maintenance modeling, geospatial AI, RPA automation, and full-cycle machine learning deployment.</p>
+        <p>Over the past few years I've moved from data science fundamentals into production-grade AI systems — integrating ML models with GIS and remote sensing pipelines, building anomaly-detection models to reduce downtime, and automating workflows with UiPath and Playwright to cut manual effort across teams.</p>
+        <p>I enjoy working across the full stack of a data problem: from preprocessing and modeling to deployment and the automation that keeps systems running reliably.</p>
+      </div>
+      <div class="stats">
+        <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Years in AI/ML &amp; Data Roles</div></div>
+        <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Companies / Teams</div></div>
+        <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Featured Projects</div></div>
+        <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Certifications</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-tag">Experience</div>
+    <h2 class="section-title">Where I've Worked</h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <div><div class="tl-role">Software Engineer - L1</div><div class="tl-company">ProdEngines Private Limited (on behalf of SpeeHive Solutions FZCO)</div></div>
+          <div class="tl-meta">04/2025 – Present · Palakkad, India</div>
+        </div>
+        <ul>
+          <li>Developed AI-driven solutions for vessel performance optimization and operational efficiency</li>
+          <li>Built predictive maintenance models to identify anomalies and reduce downtime</li>
+          <li>Designed and deployed RPA workflows using UiPath, reducing manual effort and improving process efficiency</li>
+          <li>Automated web data extraction and system integrations using Playwright and Python</li>
+          <li>Improved reliability and scalability of data processing systems through automation</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <div><div class="tl-role">AI Engineer</div><div class="tl-company">X Boson AI Pvt Ltd</div></div>
+          <div class="tl-meta">01/2024 – 12/2024 · Palakkad, India</div>
+        </div>
+        <ul>
+          <li>Integrated ML models with GIS and remote sensing technologies</li>
+          <li>Optimized workflows for large-scale geospatial data processing</li>
+          <li>Deployed AI solutions for real-world spatial analytics</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <div><div class="tl-role">Data Science Intern</div><div class="tl-company">Luminar Technolab</div></div>
+          <div class="tl-meta">11/2023 – 07/2024 · Kochi</div>
+        </div>
+        <ul>
+          <li>Built and evaluated ML models on real-world datasets</li>
+          <li>Applied predictive modeling and data preprocessing techniques</li>
+          <li>Performed data analysis and visualization using Pandas, NumPy, and Matplotlib</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <div><div class="tl-role">Machine Learning Intern</div><div class="tl-company">Techvolt Software Solutions Pvt Ltd</div></div>
+          <div class="tl-meta">07/2022 – 08/2022 · Coimbatore</div>
+        </div>
+        <ul>
+          <li>Implemented ML algorithms: Decision Trees, Random Forest, KNN</li>
+          <li>Worked on classification, regression, and clustering problems</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-header">
+          <div><div class="tl-role">Python Internship</div><div class="tl-company">Wozti Infotech</div></div>
+          <div class="tl-meta">02/2022 – 03/2022 · Kochi</div>
+        </div>
+        <ul>
+          <li>Developed Python scripts and improved problem-solving skills</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-tag">Projects</div>
+    <h2 class="section-title">Featured Work</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>IPL Match Simulator</h3>
+        <p>Real-time cricket analytics tool using Streamlit and ML, with live score tracking and match prediction.</p>
+        <span class="project-tag">Streamlit · ML</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Movie Recommendation System</h3>
+        <p>Hybrid recommendation engine combining collaborative and content-based filtering for improved accuracy.</p>
+        <span class="project-tag">Recommender Systems</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Stock Price Prediction</h3>
+        <p>ML model using historical data to forecast trends and support decision-making.</p>
+        <span class="project-tag">Time Series · ML</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Music Genre Classification</h3>
+        <p>Automated genre classification system using machine learning for audio analysis.</p>
+        <span class="project-tag">Audio ML</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-tag">Skills</div>
+    <h2 class="section-title">Toolkit</h2>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-cat-title">Technical Skills</div>
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">C#</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Artificial Intelligence</span>
+          <span class="pill">Computer Vision</span>
+          <span class="pill">Predictive Analytics</span>
+          <span class="pill">UiPath Studio</span>
+          <span class="pill">Playwright</span>
+          <span class="pill">Power BI</span>
+          <span class="pill">Data Analysis</span>
+          <span class="pill">Model Deployment</span>
+          <span class="pill">Data Pipelines</span>
+          <span class="pill">Automation</span>
+          <span class="pill">REST APIs</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-cat-title">Soft Skills</div>
+        <div class="pill-row">
+          <span class="pill">Teamwork</span>
+          <span class="pill">Leadership</span>
+          <span class="pill">Time Management</span>
+          <span class="pill">Problem Solving</span>
+        </div>
+        <div class="skill-cat-title" style="margin-top:24px;">Languages</div>
+        <div class="pill-row">
+          <span class="pill">English</span>
+          <span class="pill">Malayalam</span>
+          <span class="pill">Tamil</span>
+          <span class="pill">Hindi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-tag">Education &amp; Certifications</div>
+    <h2 class="section-title">Background</h2>
+    <div class="edu-cert-grid">
+      <div class="card">
+        <h3>B.Sc. Artificial Intelligence and Machine Learning</h3>
+        <div class="meta">AJK College of Arts and Science · Coimbatore · 10/2020 – 05/2023</div>
+      </div>
+      <div class="card">
+        <h3>Certifications</h3>
+        <ul class="cert-list">
+          <li>Python and AI Bootcamp</li>
+          <li>Python and Data Analysis Bootcamp</li>
+          <li>Data Analytics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <h2>Let's Build Something Together</h2>
+    <p>Open to opportunities in AI/ML engineering, automation, and data-driven product development.</p>
+    <div class="footer-links">
+      <a class="btn btn-primary" href="mailto:padmanabhannm18@gmail.com">Email Me</a>
+      <a class="btn btn-outline" href="https://github.com/Padmanabhannm18" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-outline" href="tel:+916282629959">Call Me</a>
+    </div>
+    <div class="copyright">© 2026 Padmanabhan N M. Built with care.</div>
+  </div>
+</footer>
+
+</body>
+</html>
