@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Padmanabhan N M | AI/ML Engineer</title>
+<meta name="description" content="AI/ML Engineer specializing in predictive maintenance, geospatial AI, and machine learning deployment.">
+<meta property="og:title" content="Padmanabhan N M | AI/ML Engineer">
+<meta property="og:description" content="AI/ML Engineer specializing in predictive maintenance, geospatial AI, and machine learning deployment.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://padmanabhannm18.github.io/portfolio/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Padmanabhan N M | AI/ML Engineer">
+<meta name="twitter:description" content="AI/ML Engineer specializing in predictive maintenance, geospatial AI, and machine learning deployment.">
 <style>
   :root{
     --bg:#0b0e14;
@@ -84,6 +92,21 @@
   .btn-outline:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
   .contact-strip{display:flex;flex-wrap:wrap;gap:22px;color:var(--text-dim);font-size:0.9rem;}
   .contact-strip span{display:flex;align-items:center;gap:6px;}
+
+  .hero-inner{display:flex;align-items:center;gap:56px;}
+  .hero-text{flex:1;min-width:0;}
+  .hero-photo-wrap{flex-shrink:0;}
+  .hero-photo{
+    width:220px;height:220px;border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--border);
+    box-shadow:0 0 0 6px rgba(94,234,212,0.08), 0 20px 40px rgba(0,0,0,0.4);
+  }
+  @media(max-width:800px){
+    .hero-inner{flex-direction:column-reverse;text-align:center;gap:28px;}
+    .lead{max-width:100%;}
+    .cta-row, .contact-strip{justify-content:center;}
+  }
 
   /* SECTIONS */
   section{padding:72px 0;border-top:1px solid var(--border);}
@@ -193,18 +216,26 @@
 
 <header class="hero">
   <div class="container">
-    <div class="eyebrow">AI / ML Engineer</div>
-    <h1>Padmanabhan N M</h1>
-    <div class="role">Building intelligent systems with <span class="accent">Python, ML &amp; automation</span></div>
-    <p class="lead">AI/ML Engineer with strong Python expertise, experienced in building and deploying machine learning solutions for predictive analytics and data-driven systems. Also skilled in backend development and RPA using UiPath Studio and Playwright to deliver scalable, efficient applications.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:padmanabhannm18@gmail.com">Get In Touch</a>
-      <a class="btn btn-outline" href="https://github.com/Padmanabhannm18" target="_blank" rel="noopener">View GitHub</a>
-    </div>
-    <div class="contact-strip">
-      <span>📍 Kerala, India</span>
-      <span>✉️ padmanabhannm18@gmail.com</span>
-      <span>📞 +91 6282629959</span>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="eyebrow">AI / ML Engineer</div>
+        <h1>Padmanabhan N M</h1>
+        <div class="role">Building intelligent systems with <span class="accent">Python, Machine Learning &amp; AI</span></div>
+        <p class="lead">AI/ML Engineer with strong Python expertise, experienced in building and deploying machine learning solutions for predictive analytics, computer vision, and data-driven systems — from predictive maintenance models to geospatial AI pipelines.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:padmanabhannm18@gmail.com">Get In Touch</a>
+          <a class="btn btn-outline" href="https://github.com/Padmanabhannm18" target="_blank" rel="noopener">View GitHub</a>
+        </div>
+        <div class="contact-strip">
+          <span>📍 Kerala, India</span>
+          <span>✉️ padmanabhannm18@gmail.com</span>
+          <span>📞 +91 6282629959</span>
+          <span>💼 <a href="https://www.linkedin.com/in/padmanabhan-n-m-2a3508207" target="_blank" rel="noopener">LinkedIn</a></span>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="profile.jpg" alt="Padmanabhan N M" class="hero-photo">
+      </div>
     </div>
   </div>
 </header>
@@ -215,9 +246,9 @@
     <h2 class="section-title">Who I Am</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>I'm an AI/ML Engineer based in Kerala, India, currently working on AI-driven solutions for vessel performance optimization and operational efficiency. My background spans predictive maintenance modeling, geospatial AI, RPA automation, and full-cycle machine learning deployment.</p>
-        <p>I started out with a series of internships that built my foundation in Python, machine learning, and data analysis, then moved into full-time roles building production-grade AI systems — integrating ML models with GIS and remote sensing pipelines, building anomaly-detection models to reduce downtime, and automating workflows with UiPath and Playwright to cut manual effort across teams.</p>
-        <p>I enjoy working across the full stack of a data problem: from preprocessing and modeling to deployment and the automation that keeps systems running reliably.</p>
+        <p>I'm an AI/ML Engineer based in Kerala, India, currently working on AI-driven solutions for vessel performance optimization and operational efficiency. My background spans predictive maintenance modeling, geospatial AI, and full-cycle machine learning deployment.</p>
+        <p>I started out with a series of internships that built my foundation in Python, machine learning, and data analysis, then moved into full-time roles building production-grade AI systems — integrating ML models with GIS and remote sensing pipelines, and building anomaly-detection models that predict equipment failures before they happen.</p>
+        <p>I enjoy working across the full stack of a data problem: from preprocessing and modeling to deployment and the systems that keep models running reliably in production.</p>
       </div>
       <div class="stats">
         <div class="stat-card"><div class="stat-num">2+</div><div class="stat-label">Years Full-Time Experience</div></div>
@@ -340,21 +371,21 @@
       <div>
         <div class="skill-cat-title">Technical Skills</div>
         <div class="pill-row">
-          <span class="pill">Python</span>
-          <span class="pill">SQL</span>
-          <span class="pill">C#</span>
           <span class="pill">Machine Learning</span>
           <span class="pill">Artificial Intelligence</span>
           <span class="pill">Computer Vision</span>
           <span class="pill">Predictive Analytics</span>
+          <span class="pill">Python</span>
+          <span class="pill">Model Deployment</span>
+          <span class="pill">Data Analysis</span>
+          <span class="pill">Data Pipelines</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Power BI</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">C#</span>
           <span class="pill">UiPath Studio</span>
           <span class="pill">Playwright</span>
-          <span class="pill">Power BI</span>
-          <span class="pill">Data Analysis</span>
-          <span class="pill">Model Deployment</span>
-          <span class="pill">Data Pipelines</span>
           <span class="pill">Automation</span>
-          <span class="pill">REST APIs</span>
         </div>
       </div>
       <div>
@@ -401,13 +432,14 @@
 <footer id="contact">
   <div class="container">
     <h2>Let's Build Something Together</h2>
-    <p>Open to opportunities in AI/ML engineering, automation, and data-driven product development.</p>
+    <p>Open to opportunities in AI/ML engineering and data-driven product development.</p>
     <div class="footer-links">
       <a class="btn btn-primary" href="mailto:padmanabhannm18@gmail.com">Email Me</a>
       <a class="btn btn-outline" href="https://github.com/Padmanabhannm18" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/padmanabhan-n-m-2a3508207" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-outline" href="tel:+916282629959">Call Me</a>
     </div>
-    <div class="copyright">© 2026 Padmanabhan N M.</div>
+    <div class="copyright">© 2026 Padmanabhan N M. Built with care.</div>
   </div>
 </footer>
 
