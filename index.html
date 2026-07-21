@@ -165,6 +165,9 @@
     display:inline-block;margin-top:14px;font-size:0.75rem;color:var(--accent);
     border:1px solid var(--border);padding:3px 10px;border-radius:20px;
   }
+  .project-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;}
+  .project-demo{font-size:0.82rem;font-weight:600;color:var(--accent-2);}
+  .project-demo:hover{text-decoration:underline;}
 
   /* SKILLS */
   .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
@@ -338,25 +341,37 @@
       <div class="project-card">
         <h3>IPL Match Simulator</h3>
         <p>Real-time cricket analytics tool using Streamlit and ML, with live score tracking and match prediction.</p>
-        <span class="project-tag">Streamlit · ML</span>
+        <div class="project-footer">
+          <span class="project-tag">Streamlit · ML</span>
+          <a class="project-demo" href="https://ipl-match-simulator-d3pjl58z5knv6jfx25nkaw.streamlit.app/" target="_blank" rel="noopener">Live Demo →</a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Movie Recommendation System</h3>
         <p>Hybrid recommendation engine combining collaborative and content-based filtering for improved accuracy.</p>
-        <span class="project-tag">Recommender Systems</span>
+        <div class="project-footer">
+          <span class="project-tag">Recommender Systems</span>
+          <a class="project-demo" href="https://bxzbwmh2bxqkqkznim5p54.streamlit.app/" target="_blank" rel="noopener">Live Demo →</a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Stock Price Prediction</h3>
         <p>ML model using historical data to forecast trends and support decision-making.</p>
-        <span class="project-tag">Time Series · ML</span>
+        <div class="project-footer">
+          <span class="project-tag">Time Series · ML</span>
+          <a class="project-demo" href="https://stock-price-prediction-zufn3jy4fqt4owcn8zam8p.streamlit.app/" target="_blank" rel="noopener">Live Demo →</a>
+        </div>
       </div>
 
       <div class="project-card">
         <h3>Music Genre Classification</h3>
         <p>Automated genre classification system using machine learning for audio analysis.</p>
-        <span class="project-tag">Audio ML</span>
+        <div class="project-footer">
+          <span class="project-tag">Audio ML</span>
+          <a class="project-demo" href="https://musice-genre-classification-wgdttbtb4xdjpoghmresl4.streamlit.app/" target="_blank" rel="noopener">Live Demo →</a>
+        </div>
       </div>
 
     </div>
